@@ -1,10 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
 import Header from './components/Header';
 import Movies from './containers/Movies';
 
+import store from './store';
+
 const Index = () => (
+  <Provider store={store}>
     <Router>
       <div>
         <Header />
@@ -14,6 +18,7 @@ const Index = () => (
         </div>
       </div>
     </Router>
+  </Provider>
 );
 
 export default Index;
