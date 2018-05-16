@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import Header from './components/Header';
+import Settings from './containers/Settings';
 import Movies from './containers/Movies';
 import TVShows from './containers/TVShows';
 
@@ -17,6 +18,7 @@ const Index = () => (
           <Redirect to="/movies" />
           <Route exact path="/movies" component={Movies} />
           <Route path="/tvshows" component={TVShows} />
+          <Route path="/settings" component={Settings} />
         </div>
       </div>
     </Router>
