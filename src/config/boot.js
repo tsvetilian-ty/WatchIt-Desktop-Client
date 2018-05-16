@@ -1,3 +1,4 @@
+import Server from './serverLoader';
 import UI from '../ui/main';
 
 export const loadServer = () => Server();
