@@ -1,4 +1,5 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { forwardToMain, replayActionRenderer } from 'electron-redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 
@@ -14,7 +15,9 @@ const store = createStore(
       movies,
       tvshows,
     }),
-    applyMiddleware(logger, thunk),
+    applyMiddleware(forwardToMain, logger, thunk),
 );
+
+replayActionRenderer(store);
 
 export default store;
