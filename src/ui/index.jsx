@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 
 import Header from './components/Header';
 import Movies from './containers/Movies';
+import TVShows from './containers/TVShows';
 
 import store from './store';
 
@@ -15,6 +16,7 @@ const Index = () => (
         <div className="container">
           <Redirect to="/movies" />
           <Route exact path="/movies" component={Movies} />
+          <Route path="/tvshows" component={TVShows} />
         </div>
       </div>
     </Router>
@@ -22,4 +24,3 @@ const Index = () => (
 );
 
 export default Index;
-
