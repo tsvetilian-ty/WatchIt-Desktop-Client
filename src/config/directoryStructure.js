@@ -33,5 +33,47 @@ export const checkWatchITDirectoriesStructure = () => {
 };
 
 export const startWatcher = () => {
-    // TODO
+  const watcher = chokidar.watch(PATH_TO_WATCHIT, { followSymlinks: false });
+  watcher.on('add', (pathTo) => {
+    const { ext, name, dir } = path.parse(pathTo);
+    if (SUPPORTED_VIDEO_FORMATS.has(ext)) {
+      const directories = dir.split(path.sep);
+      if (directories[directories.length - 2] === 'Movies') {
+        if (!hasWhiteSpace(name)) {
+          store.dispatch(addMovie({
+            name,
+            ext,
+            hash: createHash(name),
+            searchableName: directories[directories.length - 1],
+          }));
+        }
+      }
+      if (directories[directories.length - 4] === 'TV Shows') {
+        const show = directories[directories.length - 3];
+        const episode = directories[directories.length - 1].split(' ')[1];
+        const season = directories[directories.length - 2].split(' ')[1];
+        store.dispatch(addTVShow({
+          name,
+          ext,
+          episode,
+          season,
+          hash: createHash(name),
+          showHash: createHash(show),
+          searchableName: show,
+        }));
+      }
+    }
+  });
+  watcher.on('unlink', (pathTo) => {
+    const { ext, name, dir } = path.parse(pathTo);
+    if (SUPPORTED_VIDEO_FORMATS.has(ext)) {
+      const directories = dir.split(path.sep);
+      if (directories[directories.length - 2] === 'Movies') {
+        store.dispatch(removeMovie(createHash(name)));
+      }
+      if (directories[directories.length - 4] === 'TV Shows') {
+        store.dispatch(removeShow(createHash(name)));
+      }
+    }
+  });
 };
