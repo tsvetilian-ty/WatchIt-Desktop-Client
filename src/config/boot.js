@@ -1,6 +1,10 @@
+import * as uuid from 'uuid';
+import store from './helpers/mainProcessStore';
 import { setSigningKey, setServer, setPort, setAuthToken, setOmdbApi, setLocalIP, setDeviceName, setCurrentUser } from '../ui/actions/settingsAction';
 import { checkWatchITDirectoriesStructure, startWatcher } from './directoryStructure';
 import dbLoader from './dbLoader';
+import moviesLoader from './moviesLoader';
+import tvShowsLoader from './tvShowsLoader';
 import Server from './serverLoader';
 import UI from '../ui/main';
 
@@ -33,6 +37,8 @@ export const loadSettings = (signingKey) => {
   // Dispatching settings
   store.dispatch(setSigningKey(signingKey));
 };
+
+export const generateSigningKey = new Promise(resolve => resolve(uuid.v4()));
 
 export const directoryLoader = () => {
   checkWatchITDirectoriesStructure();

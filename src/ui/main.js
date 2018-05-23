@@ -46,6 +46,8 @@ const UI = () => {
   * Electron will-finish-launching doesn't work properly
   */
  trayBar.once('show', () => {
+  Config.generateSigningKey.then(signingKey => Config.loadSettings(signingKey));
+
   // Start the local server
   Config.loadServer();
 });
