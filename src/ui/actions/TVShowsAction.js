@@ -1,6 +1,7 @@
 import axios from 'axios';
+import * as settingsRegistry from '../../config/helpers/settingsRegistry';
 
-const omdbApi = '2bd8bacc';
+const omdbApi = settingsRegistry.get().omdbApi || '2bd8bacc';
 
 export const addTVShow = show => async (dispatch) => {
   try {
