@@ -1,11 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import TVShowsList from './TVShowsList';
 
 class TVShows extends React.Component {
 
   render() {
     return (
       <div>
-        {this.props.tvshows.length === 0 ? <NoTVShows /> : 'List with movies' }
+        {this.props.tvshows.length === 0 ? <NoTVShows /> : <TVShowsList /> }
       </div>);
   }
 }
@@ -17,4 +19,8 @@ const NoTVShows = () => (
   </div>
 );
 
-export default TVShows;
+const mapStateToProps = state => ({
+  tvshows: state.tvshows.tvShows,
+});
+
+export default connect(mapStateToProps)(TVShows);
