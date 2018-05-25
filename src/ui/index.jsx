@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Settings from './containers/Settings';
 import Movies from './containers/Movies';
 import TVShows from './containers/TVShows';
+import MovieDetails from './containers/MovieDetails';
 
 import store from './store';
 
@@ -19,6 +20,7 @@ const Index = () => (
           <Route exact path="/movies" component={Movies} />
           <Route path="/tvshows" component={TVShows} />
           <Route path="/settings" component={Settings} />
+          <Route path="/watch/movie/:hash" component={MovieDetails} />
         </div>
       </div>
     </Router>

@@ -1,11 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import MoviesList from './MoviesList';
 
 class Movies extends React.Component {
 
   render() {
     return (
       <div>
-        {this.props.movies.length === 0 ? <NoMovies /> : 'List of movies' }
+        {this.props.movies.length === 0 ? <NoMovies /> : <MoviesList /> }
       </div>
     );
   }
@@ -18,4 +20,8 @@ const NoMovies = () => (
   </div>
 );
 
-export default Movies;
+const mapStateToProps = state => ({
+  movies: state.movies.movies,
+});
+
+export default connect(mapStateToProps)(Movies);
