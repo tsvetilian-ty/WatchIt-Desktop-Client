@@ -36,7 +36,9 @@ class MoviesDetails extends React.Component {
             </div>
             <div className="movie-watch">
               {this.props.settings.authToken ?
-                'WATCHIT' :
+                <Link to={`/pickdevice/movie/${this.props.location.state.hash}`} className="ic-btn">
+                  <i className="fas fa-play" /> WatchIt
+                </Link> :
                 <Link to="/settings?noAuth" className="cant-ic-btn">
                   <i className="fas fa-ban" /> Can&#39;t play, check settings
                 </Link>}

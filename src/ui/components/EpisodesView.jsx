@@ -11,7 +11,9 @@ const EpisodesView = ({ episode, settings }) => (
     </div>
     <div className="episode-play">
       {settings.authToken ?
-        'WATCHIT' :
+        <Link to={`/pickdevice/tvshow/${episode.hash}`} className="episode-play-btn">
+          <i className="fas fa-play" />
+        </Link> :
         <Link to="/settings?noAuth" className="episode-cant-play-btn">
           <i className="fas fa-ban" />
         </Link>}
