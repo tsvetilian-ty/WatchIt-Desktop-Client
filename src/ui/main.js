@@ -8,9 +8,10 @@ import * as Config from '../config/boot';
 const UI = () => {
   const trayBar = menubar({
     index: `file://${path.join(__dirname, '../', '../', 'public', './index.html')}`,
+    icon: path.join(__dirname, '../', '../', 'public', './windows_tray_icon.ico'),
     preloadWindow: true,
-    width: 200,
-    height: 200,
+    width: 570,
+    height: 280,
   });
 
   const isDevMode = process.execPath.match(/[\\/]electron/);
@@ -45,12 +46,12 @@ const UI = () => {
   * And loading additional settings (once show-event)
   * Electron will-finish-launching doesn't work properly
   */
- trayBar.once('show', () => {
-  Config.generateSigningKey.then(signingKey => Config.loadSettings(signingKey));
+  trayBar.once('show', () => {
+    Config.generateSigningKey.then(signingKey => Config.loadSettings(signingKey));
 
-  // Start the local server
-  Config.loadServer();
-});
+    // Start the local server
+    Config.loadServer();
+  });
 };
 
 export default UI;
