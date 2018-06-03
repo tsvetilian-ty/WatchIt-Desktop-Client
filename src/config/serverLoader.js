@@ -8,7 +8,7 @@ const server = express();
 const Server = () => {
   server.use(bodyParser.urlencoded({ extended: false }));
   server.use(bodyParser.json());
-  server.use(authValidator);
+  // server.use(authValidator);
   server.get('/health', (req, res) => res.status(200).json({}));
   server.use('/watch', express.static(PATH_TO_WATCHIT));
 
