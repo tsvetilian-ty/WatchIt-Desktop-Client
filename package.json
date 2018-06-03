@@ -1,7 +1,7 @@
 {
   "name": "watchit_desktop",
   "productName": "watchit_desktop",
-  "version": "0.0.2",
+  "version": "0.2.0",
   "description": "Stream shows and movies from your PC to your mobile device",
   "main": "src/index.js",
   "scripts": {
@@ -32,7 +32,8 @@
         "packageManager": "yarn"
       },
       "electronWinstallerConfig": {
-        "name": "WatchIt"
+        "name": "WatchIt",
+        "setupIcon": "./public/watchit.ico"
       },
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},
