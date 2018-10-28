@@ -54,7 +54,7 @@ At the moment WatchIt supports: '.mkv', '.mp4', '.webm', '.TS', '.flv'
 
 ## Screenshots
 
-Non of the movies shown on the screenshots below are the "real" movies! 
+None of the movies shown on the screenshots below are the "real" movies! 
 We use movies with public access from [this gist](https://gist.github.com/jsturgis/3b19447b304616f18657), the calls to [OMDb API](http://www.omdbapi.com/) are build based on [directory structure](#user-guide) not the video file itself! 
 
 ![Movies](screenshots/desktop_watchit.PNG)
