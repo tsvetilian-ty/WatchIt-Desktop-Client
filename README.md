@@ -47,7 +47,7 @@ $ npm run make
 At the moment WatchIt supports: '.mkv', '.mp4', '.webm', '.TS', '.flv'
 
 ## User guide
-
+ * **Installation destination on Windows** - %USERPROFILE%\AppData\Local\WatchIt if you want to add a shortcut
  * **Directory structure** - will automaticly check your directory structure and will create WatchIT Folder in your USER_DIR
     - **Add Movie** - Open the 'WatchIT' directory > Movies > Folder with the name of the movie with **_** as word separator (Example: Tomb_Raider) > the video file with [supported extention](#supported-formats)
     - **Add TV Show** - Open the 'WatchIT' directory > TV_Shows > Folder with the name of the show (**_** as word separator) > Folder with the season (**_** as word separator) > Folder with the episode (**_** as word separator) > the video file with [supported extention](#supported-formats)
