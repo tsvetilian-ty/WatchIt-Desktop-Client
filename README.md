@@ -2,7 +2,7 @@
 
 WatchIT desktop client helps you manage movies and tv shows you like to stream on you mobile device.
 
-[WatchIT Server](https://github.com/tsvetilian-ty/WatchIt-Server/) | [Android Client](https://github.com/tsvetilian-ty/WatchIt-Android-Client)
+[Download WatchIT Desktop](https://github.com/tsvetilian-ty/WatchIt-Desktop-Client/releases) | [WatchIT Server](https://github.com/tsvetilian-ty/WatchIt-Server/) | [Android Client](https://github.com/tsvetilian-ty/WatchIt-Android-Client)
 
 ## Contents
 
